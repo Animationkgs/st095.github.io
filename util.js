@@ -13,6 +13,7 @@ var lesson;
 }());
 */
 
+var lesson03= function (x,n) { x.lesson= 3; x.number= n; };
 var home= 'initfields'; 
 var style= `
 div { background-color: green; border: 10px; }
@@ -144,7 +145,7 @@ var ediv= function (x,id) {
       };
 
 
-dom.style(style).appendTo(dom.head);
+//dom.style(style).appendTo(dom.head);
 
 
 //field('hi')('d1').div();
@@ -177,10 +178,10 @@ setup.fields= function (x) {
 
 setup.page= function (x) {
    var p= dom.head;
-   //p.append(dom.style(style));
+   p.append(dom.style(style));
    var t= pad(x.lesson);
    x.name= `${t}${pad(x.number)}`;
-   //p.append(dom.title(x.name));
+   p.append(dom.title(x.name));
   var prev= t+ pad(x.number-1), next= t+ pad(x.number+1);
   x.prev= `<a href= "${prev}.html"> prev </a>`;
   x.next= `<a href= "${next}.html"> next </a>`;
