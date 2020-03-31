@@ -116,7 +116,7 @@ var page;
 })();
 
 
-page.div('hi').id('d1').push();
+//page.div('hi').id('d1').push();
 var field= function (x) {
    var i;
    return function (id) {
@@ -125,7 +125,7 @@ var field= function (x) {
       i.pretty= function () { i.ispretty= true; return i; };
       i.inner= function () {
 		var t= x.toString();
-	      	if (i.ispretty) { alert(1); t= html.pretty(t); }
+	      	if (i.ispretty) { t= html.pretty(t); }
 	      return id + "= " + t; 
       };
       i.div= function () { return page.div(i.inner()).id(id).push(); };
@@ -147,9 +147,9 @@ var ediv= function (x,id) {
 dom.style(style).appendTo(dom.head);
 
 
-field('hi')('d1').div();
-field('1')('test').div();
-field('2')( "navigate").div();
+//field('hi')('d1').div();
+//field('1')('test').div();
+//field('2')( "navigate").div();
 
 var setup= new Object();
 setup.fields= function (x) {
@@ -167,7 +167,6 @@ setup.fields= function (x) {
    if ( 'quiz' in x && x.quiz!=null ) {
      var q= x.quiz;
      ediv(html.img(q.image), "QuizImage");
-alert(1);
      field(q.ocr)("QuizOCR").pretty().div();
      field(q.solution)("quizSolution").pretty().div();
      field(q.solutionfeedback)("quizSolutionFeedback").pretty().div();
